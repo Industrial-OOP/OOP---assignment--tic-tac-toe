@@ -1,4 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+typedef struct Q
+{
+    char player[500];
+    char mark[2];
+}S;
+char pos[3][4]={{' ',' ',' ','\0'},{' ',' ',' ','\0'},{' ',' ',' ','\0'}};
+int i,j;
 
+//checkin function
+int check()
+{
+    int i,c[8]={0,0,0,0,0,0,0,0},k=0,j,n=0;
+    char y1,y2,y3;
+
+    //diagonal checking
+    for(i=0;i<3;i++)
+    {
+        if(pos[0][0]!=' ')
+        {
+            y1=pos[0][0];
+            if(pos[i][i]==y1)
+               c[6]++;
+        }
+        if(pos[0][2]!=' ')
+        {
+            y2=pos[0][2];
+            if(pos[i][2-i]==y2)
+               c[7]++;
+        }
     }
 
     //horizontal checking
@@ -201,7 +231,7 @@ int main()
          printf("\nWanna try again?...\n(yes->1/no->0)\n");
          scanf("%d",&choice);
          if(choice==1)
-         {pos[0][0]=' ';pos[0][1]=' ';pos[0][2]=' ';pos[0][3]='\0';pos[1][0]=' ';pos[1][1]=' ';pos[1][2]=' ';pos[1][3]='\0';pos[2][0]=' ';pos[2][1]=' ';pos[2][2]=' ';pos[2][3]='\0';}
+         pos[0][0]=' ';pos[0][1]=' ';pos[0][2]=' ';pos[0][3]='\0';pos[1][0]=' ';pos[1][1]=' ';pos[1][2]=' ';pos[1][3]='\0';pos[2][0]=' ';pos[2][1]=' ';pos[2][2]=' ';pos[2][3]='\0';
       }
   }
       return 0;
