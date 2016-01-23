@@ -115,6 +115,8 @@ int main()
         printf("\nSo,\n%s and %s ...Its time for toss\n",p1,p2);
         printf("\nAnd the person who have won the toss is\n");
     //pause if you want to
+        printf("\n\n(it will take a while)\n\n");
+        pause_it();
         ti=toss();
     //toss
         if(ti==1)
@@ -246,4 +248,9 @@ int toss()
     jar/=10;
     free(tos);
     return (jar%2);
+}
+void pause_it(void)
+{
+    int i = 0,j = 0;
+    for(i = 0;i < 32767;i++) for(j = 0;j < 32767;j++) {}
 }
